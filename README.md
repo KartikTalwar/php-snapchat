@@ -1,5 +1,5 @@
-Snapchat for PHP
-================
+# Snapchat for PHP
+
 
 This library is built to communicate with the Snapchat API. So far it supports
 logging in/out, fetching snaps, downloading snaps, marking snaps viewed,
@@ -10,8 +10,87 @@ built by Thomas Lackner <[@tlack](http://twitter.com/tlack)>, but the approach
 is different enough that I figured it deserved its own repo.
 
 
-Usage
------
+## Class Methods
+
+
+```php
+require 'snapchat.php';
+
+$snapchat = new Snapchat('username', 'password');
+$snapchat->logout();
+```
+
+### getSnaps()
+
+```php
+echo $snapchat->getSnaps();
+```
+
+### getMedia($snap_id)
+
+```php
+$data = $snapchat->getMedia('122FAST2FURIOUS334r');
+file_put_contents('/home/dan/snap.jpg', $data);
+```
+
+### markSnapViewed($snap_id)
+
+```php
+echo $snapchat->markSnapViewed('122FAST2FURIOUS334r');
+```
+
+### uploadImage($image_path)
+
+```php
+echo $snapchat->uploadImage('../test.jpg');
+```
+
+### uploadVideo($video_path)
+
+```php
+echo $snapchat->uploadVideo('../test.mp4');
+```
+
+### send($snap_id, $friends_array, $seconds)
+
+```php
+$id = $snapchat->uploadImage('../test.jpg');
+echo $snapchat->send($id, array('kartiktalwar'), 8);
+```
+
+### getFriends()
+
+```php
+echo $snapchat->getFriends();
+```
+
+### addFriends($friends_array)
+
+```php
+echo $snapchat->addFriends(array('bill', 'bob', 'bart'));
+```
+
+### getBests($friends_array)
+
+```php
+echo $snapchat->getBests(array('bill', 'bob'));
+```
+
+### deleteFriends($friends_array)
+
+```php
+echo $snapchat->deleteFriends(array('bart'));
+```
+
+### updatePrivacy($privacy)
+
+```php
+echo $snapchat->updatePrivacy(Snapchat::PRIVACY_FRIENDS);
+```
+
+
+## Usage
+
 
 Include src/snapchat.php via require_once or Composer or whatever, then:
 
@@ -64,14 +143,7 @@ $snapchat->logout();
 ```
 
 
-Documentation
-------------
 
-There is none, but I tried to mark up the code well enough to make up for it.
-Error handling is pretty weak, so watch for that.
-
-
-License
-------------
+## License
 
 MIT
