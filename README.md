@@ -20,73 +20,73 @@ $snapchat = new Snapchat('username', 'password');
 $snapchat->logout();
 ```
 
-### getSnaps()
+- #### getSnaps()
 
-```php
-echo $snapchat->getSnaps();
-```
+    ```php
+    echo $snapchat->getSnaps();
+    ```
 
-### getMedia($snap_id)
+- #### getMedia($snap_id)
 
-```php
-$data = $snapchat->getMedia('122FAST2FURIOUS334r');
-file_put_contents('/home/dan/snap.jpg', $data);
-```
+    ```php
+    $data = $snapchat->getMedia('122FAST2FURIOUS334r');
+    file_put_contents('/home/dan/snap.jpg', $data);
+    ```
 
-### markSnapViewed($snap_id)
+- #### markSnapViewed($snap_id)
 
-```php
-echo $snapchat->markSnapViewed('122FAST2FURIOUS334r');
-```
+    ```php
+    echo $snapchat->markSnapViewed('122FAST2FURIOUS334r');
+    ```
 
-### uploadImage($image_path)
+- #### uploadImage($image_path)
 
-```php
-echo $snapchat->uploadImage('../test.jpg');
-```
+    ```php
+    echo $snapchat->uploadImage('../test.jpg');
+    ```
 
-### uploadVideo($video_path)
+- #### uploadVideo($video_path)
 
-```php
-echo $snapchat->uploadVideo('../test.mp4');
-```
+    ```php
+    echo $snapchat->uploadVideo('../test.mp4');
+    ```
 
-### send($snap_id, $friends_array, $seconds)
+- #### send($snap_id, $friends_array, $seconds)
 
-```php
-$id = $snapchat->uploadImage('../test.jpg');
-echo $snapchat->send($id, array('kartiktalwar'), 8);
-```
+    ```php
+    $id = $snapchat->uploadImage('../test.jpg');
+    echo $snapchat->send($id, array('kartiktalwar'), 8);
+    ```
 
-### getFriends()
+- #### getFriends()
 
-```php
-echo $snapchat->getFriends();
-```
+    ```php
+    echo $snapchat->getFriends();
+    ```
 
-### addFriends($friends_array)
+- #### addFriends($friends_array)
 
-```php
-echo $snapchat->addFriends(array('bill', 'bob', 'bart'));
-```
+    ```php
+    echo $snapchat->addFriends(array('bill', 'bob', 'bart'));
+    ```
 
-### getBests($friends_array)
+- #### getBests($friends_array)
 
-```php
-echo $snapchat->getBests(array('bill', 'bob'));
-```
+    ```php
+    echo $snapchat->getBests(array('bill', 'bob'));
+    ```
 
-### deleteFriends($friends_array)
+- #### deleteFriends($friends_array)
 
-```php
-echo $snapchat->deleteFriends(array('bart'));
-```
+    ```php
+    echo $snapchat->deleteFriends(array('bart'));
+    ```
 
-### updatePrivacy($privacy)
+- #### updatePrivacy($privacy)
 
-```php
-echo $snapchat->updatePrivacy(Snapchat::PRIVACY_FRIENDS);
-```
+    ```php
+    echo $snapchat->updatePrivacy(Snapchat::PRIVACY_FRIENDS);
+    ```
 
 
 ## Usage
