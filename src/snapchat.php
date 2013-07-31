@@ -656,6 +656,28 @@ class Snapchat {
 
 
   /**
+   * Uploads an image file.
+   *
+   * @param $filename Upload file path
+   * @return The media ID or FALSE on failure.
+   */
+  function uploadImage($filename) {
+    return $this->upload(self::MEDIA_IMAGE, file_get_contents($filename));
+  }
+
+
+  /**
+   * Uploads a video file.
+   *
+   * @param $filename Upload file path
+   * @return The media ID or FALSE on failure.
+   */
+  function uploadVideo($filename) {
+    return $this->upload(self::MEDIA_VIDEO, file_get_contents($filename));
+  }
+
+
+  /**
    * Uploads a file.
    *
    * @param $type The media type, i.e. MEDIA_IMAGE or MEDIA_VIDEO.
