@@ -181,6 +181,21 @@ abstract class SnapchatAgent {
 			return TRUE;
 		}
 
+		// Check for a PNG header.
+		if ($data[0] == chr(0x89) && $data[1] == chr(0x50)) {
+			return TRUE;
+		}
+
+		// Check for a GIF header.
+		if ($data[0] == chr(0x47) && $data[1] == chr(0x49)) {
+			return TRUE;
+		}
+
+		// Check for a BMP  header.
+		if ($data[0] == chr(0x42) && $data[1] == chr(0x4D)) {
+			return TRUE;
+		}
+
 		// Check for a MP4 header.
 		if ($data[0] == chr(0x00) && $data[1] == chr(0x00)) {
 			return TRUE;
