@@ -1,6 +1,9 @@
 Snapchat for PHP
 ================
-[![Build Status](https://travis-ci.org/dstelljes/php-snapchat.png)](https://travis-ci.org/dstelljes/php-snapchat)
+
+Originally written by Daniel Stelljes, but his whole account dissapeared without a trace.
+Will try to keep it up-to-date with the Snapchat API.
+
 
 This library is built to communicate with the Snapchat API. It is nearly
 feature complete but still lacks some functionality available in the latest
